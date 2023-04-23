@@ -4,16 +4,14 @@
 #set -o nounset  # Exit script if undefined variable is used
 #set -o pipefail # Exit script if any command in pipeline fails
 
-#!/bin/bash
-
 _ide() {
     local curr_arg="${COMP_WORDS[COMP_CWORD]}"
 
-    # もし引数が無い場合、"four"と"three"の両方を表示する
+    # If no argument is given, display both "four" and "three"
     if [[ $COMP_CWORD -eq 1 ]]; then
         COMPREPLY=( $( compgen -W 'four three default clear' -- "$curr_arg" ) )
     else
-        # 引数が指定された場合、該当する値のみを表示する
+        # If an argument is specified, display the corresponding values only
         case "$curr_arg" in
             f*)
                 COMPREPLY=( $(compgen -W 'four' -- "$curr_arg" ) )
@@ -35,3 +33,4 @@ _ide() {
 }
 
 complete -F _ide ide
+
