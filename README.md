@@ -36,7 +36,7 @@ The `.tmux.conf` file is now configured and will be used by the `tmux` command.
 
 ## Usage
 
-To use the `ide.sh` script, follow these steps:
+To use the `tmux_setup.sh` script, follow these steps:
 
 1. Open a terminal window and start a new tmux session by running the following command:
 
@@ -47,7 +47,7 @@ To use the `ide.sh` script, follow these steps:
 2. Once you are inside the tmux session, run the following command to start the IDE:
 
    ```
-   ./ide.sh
+   ./tmux_setup.sh
    ```
 
 This will split the current tmux window horizontally and create four vertical panes. The script then arranges the panes vertically and resizes them to the appropriate dimensions.
